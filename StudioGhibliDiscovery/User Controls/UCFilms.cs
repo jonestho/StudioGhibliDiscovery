@@ -20,18 +20,6 @@ namespace StudioGhibliDiscovery
             populateDataGridView();
         }
 
-        public static UCFilms Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new UCFilms();
-                }
-                return instance;
-            }
-        }
-
         private void backButton_Click(object sender, EventArgs e)
         {
             Main.Instance.previousPage();

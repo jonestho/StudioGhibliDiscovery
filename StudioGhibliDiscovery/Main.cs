@@ -96,13 +96,51 @@ namespace StudioGhibliDiscovery
                     return people;
 
                 case "UCLocations":
-                    return fetchUC(typeof(UCLocations));
+                    UserControl locations = fetchUC(typeof(UCLocations));
+
+                    if (locations == null)
+                    {
+                        locations = new UCLocations();
+                        pagesOpened.Add(locations);
+                        ControlPanel.Controls.Add(locations);
+                    }
+
+                    return locations;
+
                 case "UCSpecies":
-                    return fetchUC(typeof(UCSpecies));
+                    UserControl species = fetchUC(typeof(UCSpecies));
+
+                    if(species == null){
+                        species = new UCSpecies();
+                        pagesOpened.Add(species);
+                        ControlPanel.Controls.Add(species);
+                    }
+
+                    return species;
+
                 case "UCVehicles":
-                    return fetchUC(typeof(UCVehicles));
+                    UserControl vehicles = fetchUC(typeof(UCVehicles));
+
+                    if(vehicles == null)
+                    {
+                        vehicles = new UCVehicles();
+                        pagesOpened.Add(vehicles);
+                        ControlPanel.Controls.Add(vehicles);
+                    }
+
+                    return vehicles;
+
                 case "UCFavorites":
-                    return fetchUC(typeof(UCFavorites));
+                    UserControl favorites = fetchUC(typeof(UCFavorites));
+
+                    if(favorites == null)
+                    {
+                        favorites = new UCFavorites();
+                        pagesOpened.Add(favorites);
+                        ControlPanel.Controls.Add(favorites);
+                    }
+
+                    return favorites;
             }
 
             return null;

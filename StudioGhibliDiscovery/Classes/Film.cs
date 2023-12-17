@@ -10,7 +10,6 @@ namespace StudioGhibliDiscovery
     public class Film
     {
         // Data Grid Content
-
         public string title { get; set; }
         public string original_title { get; set; }
         public string Director { get; set; }
