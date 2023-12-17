@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StudioGhibliDiscovery
 {
-    public partial class UCFilms : UserControl
+    public partial class UCVehicles : UserControl
     {
-        public UCFilms()
+        public UCVehicles()
         {
             InitializeComponent();
         }

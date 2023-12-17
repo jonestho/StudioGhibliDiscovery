@@ -132,12 +132,13 @@
             this.viewFavorites.BackColor = System.Drawing.Color.Black;
             this.viewFavorites.Font = new System.Drawing.Font("Javanese Text", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewFavorites.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.viewFavorites.Location = new System.Drawing.Point(357, 639);
+            this.viewFavorites.Location = new System.Drawing.Point(354, 639);
             this.viewFavorites.Name = "viewFavorites";
             this.viewFavorites.Size = new System.Drawing.Size(267, 75);
             this.viewFavorites.TabIndex = 8;
             this.viewFavorites.Text = "My Favorites";
             this.viewFavorites.UseVisualStyleBackColor = false;
+            this.viewFavorites.Click += new System.EventHandler(this.viewFavorites_Click);
             // 
             // UCMain
             // 

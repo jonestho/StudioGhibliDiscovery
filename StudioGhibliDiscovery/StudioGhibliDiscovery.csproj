@@ -54,17 +54,47 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCFavorites.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFavorites.Designer.cs">
+      <DependentUpon>UCFavorites.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCFilms.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCFilms.Designer.cs">
       <DependentUpon>UCFilms.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCLocations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCLocations.Designer.cs">
+      <DependentUpon>UCLocations.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCMain.Designer.cs">
       <DependentUpon>UCMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCPeople.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCPeople.Designer.cs">
+      <DependentUpon>UCPeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSpecies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSpecies.Designer.cs">
+      <DependentUpon>UCSpecies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCVehicles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCVehicles.Designer.cs">
+      <DependentUpon>UCVehicles.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -79,11 +109,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCFavorites.resx">
+      <DependentUpon>UCFavorites.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCFilms.resx">
       <DependentUpon>UCFilms.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCLocations.resx">
+      <DependentUpon>UCLocations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCMain.resx">
       <DependentUpon>UCMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCPeople.resx">
+      <DependentUpon>UCPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSpecies.resx">
+      <DependentUpon>UCSpecies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCVehicles.resx">
+      <DependentUpon>UCVehicles.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

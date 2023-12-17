@@ -1,6 +1,6 @@
 ﻿namespace StudioGhibliDiscovery
 {
-    partial class UCFilms
+    partial class UCVehicles
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,21 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Javanese Text", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(449, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(575, 109);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Currently Archived Films";
             // 
             // backButton
             // 
@@ -52,19 +40,31 @@
             this.backButton.Location = new System.Drawing.Point(10, 10);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(129, 72);
-            this.backButton.TabIndex = 3;
+            this.backButton.TabIndex = 9;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // UCFilms
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Javanese Text", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(394, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(630, 109);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Currently Archived Vehicles";
+            // 
+            // UCVehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudioGhibliDiscovery.Properties.Resources.Background;
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.label2);
-            this.Name = "UCFilms";
+            this.Name = "UCVehicles";
             this.Size = new System.Drawing.Size(1024, 768);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -73,7 +73,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label label2;
     }
 }
