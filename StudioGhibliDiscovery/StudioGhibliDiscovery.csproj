@@ -54,6 +54,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCFilms.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFilms.Designer.cs">
+      <DependentUpon>UCFilms.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,7 +77,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCFilms.resx">
+      <DependentUpon>UCFilms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCMain.resx">
       <DependentUpon>UCMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
