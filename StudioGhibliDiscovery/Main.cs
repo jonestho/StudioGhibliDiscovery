@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,17 @@ namespace StudioGhibliDiscovery
     public partial class Main : Form
     {
         static Main instance;
-        public LinkedList<string> pageHistory = new LinkedList<string>();
+        public List<string> pageHistory = new List<string>();
 
         public Main()
         {
             InitializeComponent();
-            pageHistory.AddFirst("Main");
+
+            UCMain mainPage = new UCMain();
+            mainPage.Dock = DockStyle.Fill;
+            ControlPanel.Controls.Add(mainPage);
+
+            pageHistory.Add("UCMain");
         }
 
         public static Main Instance
@@ -32,10 +38,23 @@ namespace StudioGhibliDiscovery
                 return instance;
             }
         }
+
+        public Panel ControlPanel
+        {
+            get { return UCPanel; }
+            set { UCPanel = value; }
+        }
         
-        public UserControl createNewPage(string name)
+        public UserControl createNewPage(string pageName)
         {
             // Add a switch statement with cases that represent each interface.
+
+            switch (pageName)
+            {
+                case "UCMain":
+                    UCMain main = new UCMain();
+                    return main;
+            }
 
             return null;
         }
