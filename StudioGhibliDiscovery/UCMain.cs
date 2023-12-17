@@ -12,9 +12,23 @@ namespace StudioGhibliDiscovery
 {
     public partial class UCMain : UserControl
     {
+        static UCMain instance;
+
         public UCMain()
         {
             InitializeComponent();
+        }
+
+        public static UCMain Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new UCMain();
+                }
+                return instance;
+            }
         }
 
         private void viewFilms_Click(object sender, EventArgs e)
