@@ -65,6 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Film.cs" />
+    <Compile Include="Classes\Location.cs" />
+    <Compile Include="Classes\Species.cs" />
+    <Compile Include="Classes\Vehicle.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

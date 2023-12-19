@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.vehiclesDataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclesDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // backButton
@@ -57,15 +61,47 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Currently Archived Vehicles";
             // 
+            // vehiclesDataGrid
+            // 
+            this.vehiclesDataGrid.AllowUserToAddRows = false;
+            this.vehiclesDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.vehiclesDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.vehiclesDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.vehiclesDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.vehiclesDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.vehiclesDataGrid.Location = new System.Drawing.Point(396, 112);
+            this.vehiclesDataGrid.Name = "vehiclesDataGrid";
+            this.vehiclesDataGrid.ReadOnly = true;
+            this.vehiclesDataGrid.RowHeadersVisible = false;
+            this.vehiclesDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.vehiclesDataGrid.Size = new System.Drawing.Size(238, 99);
+            this.vehiclesDataGrid.TabIndex = 11;
+            // 
             // UCVehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudioGhibliDiscovery.Properties.Resources.Background;
+            this.Controls.Add(this.vehiclesDataGrid);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.label2);
             this.Name = "UCVehicles";
             this.Size = new System.Drawing.Size(1024, 768);
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclesDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,5 +111,6 @@
 
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView vehiclesDataGrid;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using StudioGhibliDiscovery.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +17,26 @@ namespace StudioGhibliDiscovery
         public UCSpecies()
         {
             InitializeComponent();
+            populateDataGridView();
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
             Main.Instance.previousPage();
+        }
+
+        public void populateDataGridView()
+        {
+            string speciesJSON = Main.Instance.getJSON("https://ghibliapi.vercel.app/species");
+            List<Species> species = JsonConvert.DeserializeObject<List<Species>>(speciesJSON);
+
+            speciesDataGrid.DataSource = species;
+
+            speciesDataGrid.Columns[2].HeaderText = "Eye Colors";
+            speciesDataGrid.Columns[3].HeaderText = "Hair Colors";
+
+            for(int i = 4; i < speciesDataGrid.Columns.Count; i++)
+                speciesDataGrid.Columns[i].Visible = false;
         }
     }
 }

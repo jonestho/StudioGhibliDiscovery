@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using StudioGhibliDiscovery.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +17,23 @@ namespace StudioGhibliDiscovery
         public UCLocations()
         {
             InitializeComponent();
+            populateDataGridView();
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
             Main.Instance.previousPage();
+        }
+
+        public void populateDataGridView()
+        {
+            string locationsJSON = Main.Instance.getJSON("https://ghibliapi.vercel.app/locations");
+            List<Location> locations = JsonConvert.DeserializeObject<List<Location>>(locationsJSON);
+
+            locationsDataGrid.DataSource = locations;
+
+            for (int i = 3; i < locationsDataGrid.Columns.Count; i++)
+                locationsDataGrid.Columns[i].Visible = false;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using StudioGhibliDiscovery.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +17,25 @@ namespace StudioGhibliDiscovery
         public UCVehicles()
         {
             InitializeComponent();
+            populateDataGridView();
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
             Main.Instance.previousPage();
+        }
+
+        public void populateDataGridView()
+        {
+            string vehiclesJSON = Main.Instance.getJSON("https://ghibliapi.vercel.app/vehicles");
+            List<Vehicle> vehicles = JsonConvert.DeserializeObject<List<Vehicle>>(vehiclesJSON);
+
+            vehiclesDataGrid.DataSource = vehicles;
+
+            vehiclesDataGrid.Columns[1].HeaderText = "Class";
+
+            for(int i = 3; i < vehiclesDataGrid.Columns.Count; i++)
+                vehiclesDataGrid.Columns[i].Visible = false;
         }
     }
 }
