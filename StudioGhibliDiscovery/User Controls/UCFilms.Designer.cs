@@ -90,6 +90,7 @@
             this.filmsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.filmsDataGrid.Size = new System.Drawing.Size(900, 532);
             this.filmsDataGrid.TabIndex = 5;
+            this.filmsDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.filmsDataGrid_CellDoubleClick);
             // 
             // UCFilms
             // 

@@ -1,7 +1,10 @@
-﻿using System;
+﻿using StudioGhibliDiscovery.Classes;
+using StudioGhibliDiscovery.User_Controls;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
@@ -55,10 +58,11 @@ namespace StudioGhibliDiscovery
             return null;
         }
 
-        public UserControl switchPage(string pageName)
+        public UserControl switchPage(string pageName, Film film = null, Location loc = null, Vehicle veh = null, Species spec = null, Person pers = null)
         {
             switch (pageName)
             {
+                // Pages Directly Accessed from Home
                 case "UCMain":
                     UserControl main = fetchUC(typeof(UCMain));
 
@@ -141,6 +145,22 @@ namespace StudioGhibliDiscovery
                     }
 
                     return favorites;
+
+                // Individual Pages
+                case "UCFilm":
+                    UserControl filmPage = fetchUC(typeof(UCFilm));
+
+                    if(filmPage != null)
+                    {
+                        ControlPanel.Controls.Remove(filmPage);
+                        pagesOpened.Remove(filmPage);
+                    }
+
+                    filmPage = new UCFilm(film);
+                    pagesOpened.Add(filmPage);
+                    ControlPanel.Controls.Add(filmPage);
+
+                    return filmPage;
             }
 
             return null;
@@ -161,18 +181,41 @@ namespace StudioGhibliDiscovery
             }
         }
 
-        public void nextPage(string pageName)
+        public void nextPage(string pageName, Film film = null, Location loc = null, Vehicle veh = null, Species spec = null, Person pers = null)
         {
             pageHistory.Add(pageName);
-            UserControl pageObject = switchPage(pageName);
+            UserControl pageObject;
+
+            if (film != null)
+                pageObject = switchPage(pageName, film);
+            else if (loc != null)
+                pageObject = switchPage(pageName, null, loc);
+            else if (veh != null)
+                pageObject = switchPage(pageName, null, null, veh);
+            else if (spec != null)
+                pageObject = switchPage(pageName, null, null, null, spec);
+            else if (pers != null)
+                pageObject = switchPage(pageName, null, null, null, null, pers);
+            else
+                pageObject = switchPage(pageName);
 
             displayPage(pageName, pageObject);
         }
 
-        public void previousPage()
+        public void previousPage(bool toHome = false)
         {
-            pageHistory.RemoveAt(pageHistory.Count - 1);
-            string pageName = pageHistory[pageHistory.Count - 1];
+            string pageName;
+
+            if (!toHome)
+            {
+                pageHistory.RemoveAt(pageHistory.Count - 1);
+                pageName = pageHistory[pageHistory.Count - 1];
+            }
+            else
+            {
+                pageHistory.RemoveRange(1, pageHistory.Count - 1);
+                pageName = pageHistory[0];
+            }
 
             UserControl pageObject = switchPage(pageName);
             displayPage(pageName, pageObject);

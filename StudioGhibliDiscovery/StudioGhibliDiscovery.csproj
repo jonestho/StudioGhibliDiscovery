@@ -83,6 +83,12 @@
     <Compile Include="User Controls\UCFavorites.Designer.cs">
       <DependentUpon>UCFavorites.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\UCFilm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UCFilm.Designer.cs">
+      <DependentUpon>UCFilm.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\UCFilms.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="User Controls\UCFavorites.resx">
       <DependentUpon>UCFavorites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UCFilm.resx">
+      <DependentUpon>UCFilm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UCFilms.resx">
       <DependentUpon>UCFilms.cs</DependentUpon>
