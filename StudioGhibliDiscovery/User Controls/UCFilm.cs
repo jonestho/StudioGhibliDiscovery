@@ -32,7 +32,13 @@ namespace StudioGhibliDiscovery.User_Controls
 
         private void populateFilmPage()
         {
-            filmName.Text = $"{film.title} ({film.original_title_romanised})";
+            pictureBox1.Load(film.image);   
+            pictureBox1.Size = new Size(250, 332);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            filmName.Text += $"{film.title} ({film.original_title_romanised})";
+            directorName.Text += $"{film.Director}";
+
         }
     }
 }

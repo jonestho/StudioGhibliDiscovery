@@ -32,8 +32,9 @@
             this.homeButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.filmName = new System.Windows.Forms.Label();
+            this.alphaBlendTextBox1 = new ZBobb.AlphaBlendTextBox();
+            this.filmName = new ZBobb.AlphaBlendTextBox();
+            this.directorName = new ZBobb.AlphaBlendTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,41 +80,55 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(39, 107);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 317);
+            this.pictureBox1.Size = new System.Drawing.Size(250, 332);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // alphaBlendTextBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Javanese Text", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(295, 107);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 66);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Name:";
+            this.alphaBlendTextBox1.BackAlpha = 10;
+            this.alphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.alphaBlendTextBox1.Location = new System.Drawing.Point(-15, -15);
+            this.alphaBlendTextBox1.Name = "alphaBlendTextBox1";
+            this.alphaBlendTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.alphaBlendTextBox1.TabIndex = 10;
             // 
             // filmName
             // 
-            this.filmName.AutoSize = true;
-            this.filmName.BackColor = System.Drawing.Color.Transparent;
-            this.filmName.Font = new System.Drawing.Font("Javanese Text", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filmName.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.filmName.Location = new System.Drawing.Point(391, 107);
+            this.filmName.BackAlpha = 0;
+            this.filmName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.filmName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.filmName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filmName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.filmName.Location = new System.Drawing.Point(295, 107);
+            this.filmName.Multiline = true;
             this.filmName.Name = "filmName";
-            this.filmName.Size = new System.Drawing.Size(133, 66);
-            this.filmName.TabIndex = 9;
-            this.filmName.Text = "XXXXX";
+            this.filmName.Size = new System.Drawing.Size(746, 67);
+            this.filmName.TabIndex = 12;
+            this.filmName.Text = "Name: ";
+            // 
+            // directorName
+            // 
+            this.directorName.BackAlpha = 0;
+            this.directorName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.directorName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.directorName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.directorName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.directorName.Location = new System.Drawing.Point(295, 180);
+            this.directorName.Multiline = true;
+            this.directorName.Name = "directorName";
+            this.directorName.Size = new System.Drawing.Size(746, 67);
+            this.directorName.TabIndex = 13;
+            this.directorName.Text = "Director: ";
             // 
             // UCFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudioGhibliDiscovery.Properties.Resources.Background;
+            this.Controls.Add(this.directorName);
             this.Controls.Add(this.filmName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.alphaBlendTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.homeButton);
@@ -132,7 +147,8 @@
         private System.Windows.Forms.Button homeButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label filmName;
+        private ZBobb.AlphaBlendTextBox alphaBlendTextBox1;
+        private ZBobb.AlphaBlendTextBox filmName;
+        private ZBobb.AlphaBlendTextBox directorName;
     }
 }
