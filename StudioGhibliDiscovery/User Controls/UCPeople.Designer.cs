@@ -33,7 +33,6 @@
             this.backButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.peopleDataGrid = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.peopleDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,32 +83,19 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.peopleDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.peopleDataGrid.Location = new System.Drawing.Point(20, 118);
+            this.peopleDataGrid.Location = new System.Drawing.Point(243, 236);
             this.peopleDataGrid.Name = "peopleDataGrid";
             this.peopleDataGrid.ReadOnly = true;
             this.peopleDataGrid.RowHeadersVisible = false;
             this.peopleDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.peopleDataGrid.Size = new System.Drawing.Size(512, 584);
+            this.peopleDataGrid.Size = new System.Drawing.Size(512, 460);
             this.peopleDataGrid.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Javanese Text", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(611, 216);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 218);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Character Info \r\nGoes Here! :)";
             // 
             // UCPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudioGhibliDiscovery.Properties.Resources.Background;
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.peopleDataGrid);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.label2);
@@ -126,6 +112,5 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView peopleDataGrid;
-        private System.Windows.Forms.Label label1;
     }
 }

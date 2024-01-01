@@ -14,6 +14,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace StudioGhibliDiscovery
 {
@@ -24,11 +25,22 @@ namespace StudioGhibliDiscovery
         private List<string> pageHistory = new List<string>();
         private List<UserControl> pagesOpened = new List<UserControl>();
 
-        private string currentPage = "";
+        // All API Data is preloaded.
+        public List<Film> films;
+        public List<Person> people;
+        public List<Location> locations;
+        public List<Species> species;
+        public List<Vehicle> vehicles;
 
         public Main()
         {
             InitializeComponent();
+
+            films = JsonConvert.DeserializeObject<List<Film>>(getJSON("https://ghibliapi.vercel.app/films"));
+            people = JsonConvert.DeserializeObject<List<Person>>(getJSON("https://ghibliapi.vercel.app/people"));
+            locations = JsonConvert.DeserializeObject<List<Location>>(getJSON("https://ghibliapi.vercel.app/locations"));
+            species = JsonConvert.DeserializeObject<List<Species>>(getJSON("https://ghibliapi.vercel.app/species"));
+            vehicles = JsonConvert.DeserializeObject<List<Vehicle>>(getJSON("https://ghibliapi.vercel.app/vehicles"));
         }
 
         public static Main Instance
@@ -172,8 +184,6 @@ namespace StudioGhibliDiscovery
             {
                 pageObject.Dock = DockStyle.Fill;
                 ControlPanel.Controls[pageName].BringToFront();
-
-                currentPage = pageName;
             }
             catch (Exception ex)
             {

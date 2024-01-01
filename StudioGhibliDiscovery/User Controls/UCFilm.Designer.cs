@@ -32,11 +32,11 @@
             this.homeButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.filmName = new ZBobb.AlphaBlendTextBox();
-            this.directorName = new ZBobb.AlphaBlendTextBox();
-            this.rtScore = new ZBobb.AlphaBlendTextBox();
-            this.movieLen = new ZBobb.AlphaBlendTextBox();
-            this.filmDesc = new ZBobb.AlphaBlendTextBox();
+            this.filmDesc = new System.Windows.Forms.Label();
+            this.filmName = new System.Windows.Forms.Label();
+            this.rtScore = new System.Windows.Forms.Label();
+            this.directorName = new System.Windows.Forms.Label();
+            this.movieLen = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,91 +86,70 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // filmDesc
+            // 
+            this.filmDesc.BackColor = System.Drawing.Color.Transparent;
+            this.filmDesc.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filmDesc.ForeColor = System.Drawing.SystemColors.Window;
+            this.filmDesc.Location = new System.Drawing.Point(34, 427);
+            this.filmDesc.Name = "filmDesc";
+            this.filmDesc.Size = new System.Drawing.Size(942, 327);
+            this.filmDesc.TabIndex = 24;
+            // 
             // filmName
             // 
-            this.filmName.BackAlpha = 0;
-            this.filmName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.filmName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.filmName.BackColor = System.Drawing.Color.Transparent;
             this.filmName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filmName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.filmName.ForeColor = System.Drawing.SystemColors.Window;
             this.filmName.Location = new System.Drawing.Point(295, 121);
-            this.filmName.Multiline = true;
             this.filmName.Name = "filmName";
-            this.filmName.ReadOnly = true;
             this.filmName.Size = new System.Drawing.Size(746, 67);
-            this.filmName.TabIndex = 12;
+            this.filmName.TabIndex = 25;
             this.filmName.Text = "Name: ";
-            this.filmName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.filmName_MouseClick);
-            // 
-            // directorName
-            // 
-            this.directorName.BackAlpha = 0;
-            this.directorName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.directorName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.directorName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.directorName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.directorName.Location = new System.Drawing.Point(295, 267);
-            this.directorName.Multiline = true;
-            this.directorName.Name = "directorName";
-            this.directorName.ReadOnly = true;
-            this.directorName.Size = new System.Drawing.Size(746, 67);
-            this.directorName.TabIndex = 13;
-            this.directorName.Text = "Director: ";
             // 
             // rtScore
             // 
-            this.rtScore.BackAlpha = 0;
-            this.rtScore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.rtScore.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtScore.BackColor = System.Drawing.Color.Transparent;
             this.rtScore.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtScore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rtScore.ForeColor = System.Drawing.SystemColors.Window;
             this.rtScore.Location = new System.Drawing.Point(295, 194);
-            this.rtScore.Multiline = true;
             this.rtScore.Name = "rtScore";
-            this.rtScore.ReadOnly = true;
             this.rtScore.Size = new System.Drawing.Size(746, 67);
-            this.rtScore.TabIndex = 14;
+            this.rtScore.TabIndex = 26;
             this.rtScore.Text = "Rotten Tomatoes Score: ";
+            // 
+            // directorName
+            // 
+            this.directorName.BackColor = System.Drawing.Color.Transparent;
+            this.directorName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.directorName.ForeColor = System.Drawing.SystemColors.Window;
+            this.directorName.Location = new System.Drawing.Point(295, 270);
+            this.directorName.Name = "directorName";
+            this.directorName.Size = new System.Drawing.Size(746, 67);
+            this.directorName.TabIndex = 27;
+            this.directorName.Text = "Director: ";
             // 
             // movieLen
             // 
-            this.movieLen.BackAlpha = 0;
-            this.movieLen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.movieLen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.movieLen.BackColor = System.Drawing.Color.Transparent;
             this.movieLen.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movieLen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.movieLen.Location = new System.Drawing.Point(295, 340);
-            this.movieLen.Multiline = true;
+            this.movieLen.ForeColor = System.Drawing.SystemColors.Window;
+            this.movieLen.Location = new System.Drawing.Point(295, 341);
             this.movieLen.Name = "movieLen";
-            this.movieLen.ReadOnly = true;
             this.movieLen.Size = new System.Drawing.Size(746, 67);
-            this.movieLen.TabIndex = 15;
+            this.movieLen.TabIndex = 28;
             this.movieLen.Text = "Running Time: ";
-            // 
-            // filmDesc
-            // 
-            this.filmDesc.BackAlpha = 0;
-            this.filmDesc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.filmDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.filmDesc.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filmDesc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.filmDesc.Location = new System.Drawing.Point(34, 427);
-            this.filmDesc.Multiline = true;
-            this.filmDesc.Name = "filmDesc";
-            this.filmDesc.ReadOnly = true;
-            this.filmDesc.Size = new System.Drawing.Size(942, 327);
-            this.filmDesc.TabIndex = 16;
             // 
             // UCFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudioGhibliDiscovery.Properties.Resources.Background;
-            this.Controls.Add(this.filmDesc);
             this.Controls.Add(this.movieLen);
-            this.Controls.Add(this.rtScore);
             this.Controls.Add(this.directorName);
+            this.Controls.Add(this.rtScore);
             this.Controls.Add(this.filmName);
+            this.Controls.Add(this.filmDesc);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.homeButton);
@@ -189,10 +168,10 @@
         private System.Windows.Forms.Button homeButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ZBobb.AlphaBlendTextBox filmName;
-        private ZBobb.AlphaBlendTextBox directorName;
-        private ZBobb.AlphaBlendTextBox rtScore;
-        private ZBobb.AlphaBlendTextBox movieLen;
-        private ZBobb.AlphaBlendTextBox filmDesc;
+        private System.Windows.Forms.Label filmDesc;
+        private System.Windows.Forms.Label filmName;
+        private System.Windows.Forms.Label rtScore;
+        private System.Windows.Forms.Label directorName;
+        private System.Windows.Forms.Label movieLen;
     }
 }

@@ -3,5 +3,3 @@ References:
 1. How to display JSON data in a DataGridView in WinForms?: https://stackoverflow.com/questions/23763446/how-to-display-json-data-in-a-datagridview-in-winforms
 2. C# Tutorial - JSON Parsing: https://www.youtube.com/watch?v=xkB-cIMjXGQ
 3. Http Get And Post in C#: https://www.youtube.com/watch?v=Yi-O-HBGPeU&ab_channel=NickProud
-4. How to make a Text box unselectable: https://codereview.stackexchange.com/questions/67561/disabling-selection-in-textbox
-5. AlphaBlendTextBox Control: https://www.codeproject.com/Articles/4390/AlphaBlendTextBox-A-transparent-translucent-textbo

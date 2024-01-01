@@ -27,10 +27,7 @@ namespace StudioGhibliDiscovery
 
         public void populateDataGridView()
         {
-            string vehiclesJSON = Main.Instance.getJSON("https://ghibliapi.vercel.app/vehicles");
-            List<Vehicle> vehicles = JsonConvert.DeserializeObject<List<Vehicle>>(vehiclesJSON);
-
-            vehiclesDataGrid.DataSource = vehicles;
+            vehiclesDataGrid.DataSource = Main.Instance.vehicles;
 
             vehiclesDataGrid.Columns[1].HeaderText = "Class";
 

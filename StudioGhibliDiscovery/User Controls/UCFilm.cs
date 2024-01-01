@@ -31,14 +31,6 @@ namespace StudioGhibliDiscovery.User_Controls
             Main.Instance.previousPage(true);
         }
 
-        private void removeSelection(Object obj)
-        {
-            AlphaBlendTextBox textBox = obj as AlphaBlendTextBox;
-
-            if(textBox != null )
-                textBox.SelectionLength = 0;
-        }
-
         private void populateFilmPage()
         {
             pictureBox1.Load(film.image);   
@@ -50,11 +42,6 @@ namespace StudioGhibliDiscovery.User_Controls
             directorName.Text += $"{film.Director}";
             movieLen.Text += $"{film.running_time} minutes";
             filmDesc.Text = $"{film.description}";
-        }
-
-        private void filmName_MouseClick(object sender, MouseEventArgs e)
-        {
-            removeSelection(sender);
         }
     }
 }

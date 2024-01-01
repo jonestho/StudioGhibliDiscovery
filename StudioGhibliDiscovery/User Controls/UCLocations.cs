@@ -27,10 +27,7 @@ namespace StudioGhibliDiscovery
 
         public void populateDataGridView()
         {
-            string locationsJSON = Main.Instance.getJSON("https://ghibliapi.vercel.app/locations");
-            List<Location> locations = JsonConvert.DeserializeObject<List<Location>>(locationsJSON);
-
-            locationsDataGrid.DataSource = locations;
+            locationsDataGrid.DataSource = Main.Instance.locations;
 
             for (int i = 3; i < locationsDataGrid.Columns.Count; i++)
                 locationsDataGrid.Columns[i].Visible = false;

@@ -13,7 +13,6 @@ namespace StudioGhibliDiscovery
 {
     public partial class UCFilms : UserControl
     {
-        private List<Film> films;
         public UCFilms()
         {
             InitializeComponent();
@@ -27,10 +26,7 @@ namespace StudioGhibliDiscovery
 
         private void populateDataGridView()
         {
-            string filmsJSON = Main.Instance.getJSON("https://ghibliapi.vercel.app/films");
-            films = JsonConvert.DeserializeObject<List<Film>>(filmsJSON);
-
-            filmsDataGrid.DataSource = films;
+            filmsDataGrid.DataSource = Main.Instance.films;
 
             filmsDataGrid.Columns[0].HeaderText = "Title";
             filmsDataGrid.Columns[1].HeaderText = "Original Title";
@@ -47,7 +43,7 @@ namespace StudioGhibliDiscovery
             Film selectedFilm = null;
             DataGridViewRow selectedRow = filmsDataGrid.SelectedRows[0]; // Only one can be selected.
 
-            foreach(Film film in films)
+            foreach(Film film in Main.Instance.films)
             {
                 if(film.id == selectedRow.Cells[7].Value.ToString()) // Compare IDs
                 {

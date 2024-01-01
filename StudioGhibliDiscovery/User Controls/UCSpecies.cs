@@ -27,10 +27,7 @@ namespace StudioGhibliDiscovery
 
         public void populateDataGridView()
         {
-            string speciesJSON = Main.Instance.getJSON("https://ghibliapi.vercel.app/species");
-            List<Species> species = JsonConvert.DeserializeObject<List<Species>>(speciesJSON);
-
-            speciesDataGrid.DataSource = species;
+            speciesDataGrid.DataSource = Main.Instance.species;
 
             speciesDataGrid.Columns[2].HeaderText = "Eye Colors";
             speciesDataGrid.Columns[3].HeaderText = "Hair Colors";

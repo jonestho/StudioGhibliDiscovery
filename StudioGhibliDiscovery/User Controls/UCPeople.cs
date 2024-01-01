@@ -27,10 +27,7 @@ namespace StudioGhibliDiscovery
 
         public void populateDataGridView()
         {
-            string peopleJSON = Main.Instance.getJSON("https://ghibliapi.vercel.app/people");
-            List<Person> people = JsonConvert.DeserializeObject<List<Person>>(peopleJSON);
-
-            peopleDataGrid.DataSource = people;
+            peopleDataGrid.DataSource = Main.Instance.people;
 
             peopleDataGrid.Columns[3].HeaderText = "Eye Color";
             peopleDataGrid.Columns[4].HeaderText = "Hair Color";
