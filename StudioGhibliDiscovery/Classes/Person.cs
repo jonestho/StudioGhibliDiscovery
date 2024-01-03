@@ -1,8 +1,11 @@
-﻿using System;
+﻿using StudioGhibliDiscovery.Classes;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioGhibliDiscovery
 {
@@ -16,8 +19,8 @@ namespace StudioGhibliDiscovery
         public string hair_color { get; set; }
 
         // For Individual Pages
+        public string Species { get; set; }
         public string id { get; set; }
         public List<string> films { get; set; }
-        public string Species { get; set; }
     }
 }

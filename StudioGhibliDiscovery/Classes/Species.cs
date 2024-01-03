@@ -18,6 +18,7 @@ namespace StudioGhibliDiscovery.Classes
         public string id { get; set; }
         public List<string> people { get; set; }
         public List<string> films { get; set; }
+        public string url { get; set; }
 
     }
 }

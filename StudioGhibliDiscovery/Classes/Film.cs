@@ -21,14 +21,12 @@ namespace StudioGhibliDiscovery
         public string rt_score { get; set; }
 
         // For Individual Pages
-        public string id { get; set; }
         public string original_title_romanised { get; set; }
         public string image { get; set; }
-        public string movie_banner { get; set; }
         public string description { get; set; }
-        public List<string> people { get; set; }
-        public List<string> species { get; set; }
-        public List<string> locations { get; set; }
-        public List<string> vehicles { get; set; }
+
+        // Hidden
+        public string url { get; set; }
+        public string id { get; set; }
     }
 }
