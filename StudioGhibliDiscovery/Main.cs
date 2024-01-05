@@ -32,6 +32,9 @@ namespace StudioGhibliDiscovery
         public List<Species> species;
         public List<Vehicle> vehicles;
 
+        public Hashtable filmURLMappings = new Hashtable();
+        public Hashtable personIDFilmMappings = new Hashtable();
+
         public Main()
         {
             InitializeComponent();
@@ -41,6 +44,12 @@ namespace StudioGhibliDiscovery
             locations = JsonConvert.DeserializeObject<List<Location>>(getJSON("https://ghibliapi.vercel.app/locations"));
             species = JsonConvert.DeserializeObject<List<Species>>(getJSON("https://ghibliapi.vercel.app/species"));
             vehicles = JsonConvert.DeserializeObject<List<Vehicle>>(getJSON("https://ghibliapi.vercel.app/vehicles"));
+
+            foreach (Film film in films)
+                filmURLMappings.Add(film.title, film.url);
+
+            foreach (Person person in people)
+                personIDFilmMappings.Add(person.id, person.films);
         }
 
         public static Main Instance

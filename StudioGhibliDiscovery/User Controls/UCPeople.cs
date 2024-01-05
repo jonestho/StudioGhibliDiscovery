@@ -17,6 +17,7 @@ namespace StudioGhibliDiscovery
     {
         private DataGridView dataGridBackup = new DataGridView();
         private bool initialized = false;
+        private Size originalSize;
 
         public UCPeople()
         {
@@ -82,16 +83,99 @@ namespace StudioGhibliDiscovery
             for (int i = 6; i < peopleDataGrid.Columns.Count; i++)
                 peopleDataGrid.Columns[i].Visible = false;
 
+            peopleDataGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            peopleDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            originalSize = new Size(peopleDataGrid.Width, peopleDataGrid.Height);
         }
 
         private void applyFilter_Click(object sender, EventArgs e)
         {
-            Hashtable filmTitles = new Hashtable();
+            peopleDataGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            peopleDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
-            foreach(Film film in Main.Instance.films)
+            peopleDataGrid.Size = originalSize;
+
+            resetFilters();
+
+            string filterFlag = "";
+
+            string filmFilter = (sortByFilm.SelectedItem == null) ? null: sortByFilm.SelectedItem.ToString();
+            string genderFilter = (sortByGender.SelectedItem == null) ? null : sortByGender.SelectedItem.ToString();
+            string speciesFilter = (sortBySpecies.SelectedItem == null) ? null : sortBySpecies.SelectedItem.ToString();
+
+            filterFlag += (filmFilter == null) ? "0" : "1";
+            filterFlag += (genderFilter == null) ? "0" : "1";
+            filterFlag += (speciesFilter == null) ? "0" : "1";
+
+            string filmUrl = filmFilter == null ? null : Main.Instance.filmURLMappings[filmFilter].ToString();
+
+            List<string> filmsIncluded;
+            string gender, species;
+
+            try
             {
-                filmTitles.Add(film.title, film.url);
-            }                                          
+                if (filmFilter == null && genderFilter == null && speciesFilter == null)
+                    throw new Exception("No filter(s) applied.");
+
+                foreach(DataGridViewRow row in peopleDataGrid.Rows)
+                {
+                    string sequence = "";
+
+                    filmsIncluded = (List <string>) Main.Instance.personIDFilmMappings[row.Cells[6].Value.ToString()];
+                    gender = row.Cells[1].Value.ToString();
+                    species = row.Cells[5].Value.ToString();
+
+                    if(filmUrl != null)
+                        if (filmsIncluded.Contains(filmUrl))
+                            sequence += "1";
+                        else
+                            sequence += "0";
+                    else
+                        sequence += "0";
+
+                    if (genderFilter != null)
+                        if (gender == genderFilter)
+                            sequence += "1";
+                        else
+                            sequence += "0";
+                    else
+                        sequence += "0";
+
+                    if (speciesFilter != null)
+                        if (species == speciesFilter)
+                            sequence += "1";
+                        else
+                            sequence = "0";
+                    else
+                        sequence += "0";
+
+                    if (sequence != filterFlag)
+                    {
+                        CurrencyManager currencyManager = (CurrencyManager) BindingContext[peopleDataGrid.DataSource];
+                        currencyManager.SuspendBinding();
+                        row.Visible = false;
+
+                        currencyManager.ResumeBinding();
+                    }
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void resetFilters()
+        {
+            foreach (DataGridViewRow row in peopleDataGrid.Rows)
+                row.Visible = true;
+        }
+
+        private void resetFilter_Click(object sender, EventArgs e)
+        {
+            resetFilters();
         }
     }
 }

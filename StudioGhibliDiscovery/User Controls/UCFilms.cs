@@ -45,7 +45,7 @@ namespace StudioGhibliDiscovery
 
             foreach(Film film in Main.Instance.films)
             {
-                if(film.id == selectedRow.Cells[7].Value.ToString()) // Compare IDs
+                if(film.title == selectedRow.Cells[0].Value.ToString()) // Compare IDs
                 {
                     selectedFilm = film;
                     break;
